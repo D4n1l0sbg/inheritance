@@ -31,9 +31,9 @@ public class Product {
 
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append(name);
-        sb.append("(Customs fee: $ " + price + ")\n");
+        sb.append(name + " $ " + price);
         return sb.toString();
     }
+
 
 }
