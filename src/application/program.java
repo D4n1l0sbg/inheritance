@@ -18,12 +18,13 @@ public class program {
         System.out.print("Enter the number of products: ");
         Integer n = sc.nextInt();
 
-        for (int i=1; i<n; i++){
+        for (int i=1; i<=n; i++){
            System.out.println("Product #" + i + " data: ");
            System.out.print("Common, used or imported (c/u/i)? ");
-           char type = sc.nextLine().charAt(0);
+           char type = sc.next().charAt(0);
             System.out.print("Name: ");
-            String name = sc.nextLine();
+            String name = sc.next();
+            System.out.print("Price: ");
             Double price = sc.nextDouble();
            if(type == 'c' ){
                list.add(new Product(name, price));
@@ -36,6 +37,11 @@ public class program {
                Double customsFee = sc.nextDouble();
                list.add(new ImportedProduct(name, price, customsFee));
            }
+           System.out.println("PRICE TAGS: ");
+            for (Product prod: list
+                 ) {
+                System.out.println(prod.tagPrice());
+            }
         }
         sc.close();
     }
